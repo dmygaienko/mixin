@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.mygaienko</groupId>
+    <artifactId>mixin</artifactId>
+    <version>1.0</version>
+
+    <packaging>pom</packaging>
+
+    <profiles>
+
+        <profile>
+            <id>mavenmixin-sourceandjavadoc</id>
+            <activation>
+                <property>
+                    <name>mavenmixin-sourceandjavadoc</name>
+                </property>
+            </activation>
+
+            <properties>
+                <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
+            </properties>
+
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <artifactId>maven-source-plugin</artifactId>
+                            <version>${maven-source-plugin.version}</version>
+                            <inherited>true</inherited>
+                            <configuration>
+                                <includePom>true</includePom>
+                            </configuration>
+                            <executions>
+                                <execution>
+                                    <id>package-jars</id>
+                                    <phase>package</phase>
+                                    <goals>
+                                        <goal>jar</goal>
+                                        <goal>test-jar</goal>
+                                    </goals>
+                                    <configuration>
+                                        <includePom>true</includePom>
+                                    </configuration>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-source-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+</project>
