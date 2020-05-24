@@ -1,0 +1,8 @@
+# Maven mixin practice project
+
+Inspired by:
+
+. https://www.danhaywood.com/2016/11/24/maven-mixins/
+. https://github.com/danhaywood/java-mavenmixin-sourceandjavadoc
+. https://github.com/danhaywood/java-mavenmixin-surefire
+. https://github.com/danhaywood/java-mavenmixin-standard
